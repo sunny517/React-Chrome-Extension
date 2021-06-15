@@ -1,25 +1,30 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "name": "Chrome Extension Demo",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "选词 =》 右键点击翻译 =》 跳转到baidu翻译------插件内显示翻译历史记录",
+  "icons":
+  {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "翻译",
+    "default_popup": "index.html"
+  },
+  "background":
+  {
+    "scripts": [
+      "js/jquery-3.6.0.js", "js/background.js"
+    ]
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["js/jquery-3.6.0.js", "js/content.js"]
+  }],
+  "permissions": [
+    "contextMenus"
+  ]
 }

@@ -1,0 +1,26 @@
+@import "./button";
+.App {
+  height: 100%;
+  width: 100%;
+  // min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // font-size: calc(10px + 2vmin);
+  color: white;
+
+  ul{
+    overflow-y: auto;
+    width: 140px;
+    height: 155px;
+    line-height: 30px;
+    margin: 0;
+
+    li{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
